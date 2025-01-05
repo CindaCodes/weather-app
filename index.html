@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Englebert&family=Hammersmith+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <video autoplay muted loop>
+      <source src="media/background.mp4" type="video/mp4" />
+    </video>
+
+    <div class="weather-app">
+      <!--Search Bar-->
+      <header>
+        <form class="search-form" action="" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input
+            id="searchButton"
+            type="submit"
+            value="search"
+            class="search-form-button"
+          />
+        </form>
+      </header>
+      <div class="location">
+        <h1 class="city" id="city"></h1>
+        <h2 class="country" id="country"></h2>
+      </div>
+      <!--Todays forecast-->
+      <main>
+        <div class="left-box">
+          <p class="date-time" id="time"></p>
+          <div class="main-weather-flex">
+            <div class="left-box-inner">
+              <div id="icon">
+                <img
+                  class="img-today-weather"
+                  src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-night.png"
+                />
+              </div>
+              <p class="img-desc" id="description"></p>
+            </div>
+            <div class="right-box-inner">
+              <span class="current-temp" id="temperature"></span>
+              <a class="unit-type" id="unit-type">°C</a>
+              <!--Units Toggle-->
+              <div class="units-toggle-container">
+                <label for="myCheckbox" class="units">
+                  <span class="units-text">°C</span>
+                  <input type="checkbox" id="myCheckbox" />
+                  <span class="units-button"></span>
+                  <span class="units-text">°F</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Right Container-->
+        <div class="middle-box">
+          <p class="todays-info">
+            Feels Like: <span id="feels-like"></span
+            ><span id="feels-unit-type">°C</span>
+          </p>
+          <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
+          <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
+          <p class="todays-info">
+            Wind: <span id="wind-speed"></span><span id="wind-unit">km/h</span>
+          </p>
+        </div>
+
+        <!--Wind Compass-->
+        <div class="Right-box">
+          <p class="compass-lable">Wind Direction</p>
+          <div class="compass">
+            <div class="compass-needle" id="compass-needle"></div>
+            <div class="degree-label">
+              <span id="degree"></span><span>°</span>
+            </div>
+            <div class="direction-label" id="cardinal-direction"></div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        This project was coded by
+        <a class="footer" href="https://github.com/cinda87" target="_blank"
+          >Jacinda Bietz</a
+        >, is
+        <a
+          class="footer"
+          href="https://github.com/cinda87/p-w7-vanilla-weather-app"
+          target="_blank"
+          >open sourced on GitHub</a
+        >
+        and
+        <a
+          class="footer"
+          href="https://jacinda-weather-forcast.netlify.app"
+          target="_blank"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="src/index.js"></script>
+  </body>
+</html>

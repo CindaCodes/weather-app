@@ -1,0 +1,294 @@
+/*Full Page*/
+
+video {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+body {
+  font-family: "Englebert", "Afacad Flux";
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+.weather-app {
+  background: #d7f7f5;
+  border-radius: 16px;
+  box-shadow: 10px 10px 10px #75cac3;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 30px;
+}
+
+.red {
+  color: #ff0000;
+}
+.blue {
+  color: blue;
+}
+
+/* Search Bar */
+.search-form-input {
+  background-color: #75cac3;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  padding: 15px 20px;
+  width: 70%;
+}
+
+.search-form-button {
+  background: #2a6171;
+  border-radius: 6px;
+  border: none;
+  color: #f0b32e;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 5px;
+  padding: 15px 30px;
+  width: 28%;
+}
+
+header {
+  align-items: center;
+  border-bottom: 1px solid #f0b32e;
+  padding: 0 0 30px 0;
+}
+
+.location {
+  color: #2a6171;
+  text-align: center;
+  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e, 1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+}
+
+.city {
+  font-size: 100px;
+  margin: 60px 0 30px 0;
+}
+
+.country {
+  font-size: 50px;
+  margin: 10px 0px;
+}
+
+/*Left Box: Date, Weather Description, Temperature*/
+main {
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  vertical-align: bottom;
+}
+
+/*Left*/
+.left-box {
+  color: #2a6171;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.date-time {
+  font-size: 40px;
+  margin: 35px;
+}
+
+.main-weather-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.left-box-inner,
+.right-box-inner {
+  width: 200px;
+}
+
+.left-box-inner {
+
+}
+
+.img-today-weather {
+  height: 200px;
+  width: 200px;
+}
+
+.unit-type {
+  justify-content: flex-start;
+}
+
+.current-temp {
+  font-size: 115px;
+  font-weight: bold;
+}
+
+.img-desc,
+.hi-low-today,
+.unit-type {
+  color: #2a6171;
+  font-size: larger;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.hi-low-today {
+  text-align: justify;
+}
+
+/*toggle*/
+.units-toggle-container{
+  margin-top: 30px;
+}
+.units {
+  background-color: #2a6171;
+  border-radius: 30px;
+  border: 1px solid #f0b32e;
+  box-shadow: inset 0px -1px 5px #f0b32e;
+  color: #f0b32e;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  line-height: 1.5;
+  margin: 10px auto;
+  padding: 2px 12px;
+  position: relative;
+  width: 100px;
+}
+
+.units input {
+  appearance: none;
+  border-radius: 30px;
+  cursor: pointer;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.units input:focus-visible {
+  margin: 0px auto;
+}
+
+.units-text {
+  padding: 4px 0px;
+  user-select: none;
+}
+
+.units-button {
+  border-radius: 30px;
+  box-shadow: inset 0px -1px 5px #f0b32e;
+  height: 32px;
+  pointer-events: none;
+  position: relative;
+  width: 55px;
+}
+
+.units-button::after {
+  background-color: #f0b32e;
+  border-radius: 30px;
+  box-shadow: 0px 1px 2px #f0b32e;
+  content: "";
+  height: 25px;
+  left: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  transition: 200ms cubic-bezier(0.96, -0.11, 0, 1.12);
+  width: 25px;
+}
+
+.units input:checked ~ .units-button::after {
+  transform: translate3d(22px, -50%, 0);
+}
+
+/*Right*/
+.middle-box {
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.todays-info {
+  background-color: #75cac3;
+  border-radius: 6px;
+  border: none;
+  color: #2a6171;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 15px 15px;
+  text-align: left;
+}
+
+/*Footer*/
+footer {
+  border-top: 1px solid #f0b32e;
+  color: #2a6171;
+  font-size: 17px;
+  padding: 30px 0 0 0;
+  text-align: center;
+}
+
+.footer {
+  color: #2a6171;
+}
+
+/*compass*/
+.right-box {
+  align-items: flex-end;
+}
+.compass {
+  background-color: #f0b32e;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  margin: 20px;
+  position: relative;
+  width: 200px;
+}
+
+.compass-lable {
+  border-radius: 6px;
+  border: none;
+  color: #2a6171;
+  font-size: 40px;
+  font-weight: bold;
+  height: 20px;
+  margin: 20px 0;
+  padding: 15px 15px;
+  text-align: center;
+}
+.compass-needle {
+  background: linear-gradient(109.6deg, #75cac3 5%, #d7f7f5 95%);
+  border-radius: 5px;
+  height: 70px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%);
+  width: 10px;
+}
+
+.degree-label {
+  color: #2a6171;
+  font-size: 20px;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 13px;
+  transform: translateX(-50%);
+}
+
+.direction-label {
+  bottom: 10px;
+  color: #2a6171;
+  font-size: 20px;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
