@@ -153,6 +153,6 @@ function setGaugeValue(gauge, value) {
   )}`;
 }
 
-setGaugeValue(gaugeElement, .3);
+setGaugeValue(gaugeElement, 0.3);
 
 searchCity("Geiranger", unitSystem);

@@ -13,16 +13,16 @@ body {
   font-family: "Englebert", "Afacad Flux";
   font-style: normal;
   font-weight: 600;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .weather-app {
   background: #d7f7f5;
   border-radius: 16px;
   box-shadow: 10px 10px 10px #75cac3;
-  margin: 20px auto;
+  margin: 15px auto;
   max-width: 900px;
-  padding: 30px;
+  padding: 20px;
 }
 
 .red {
@@ -57,7 +57,7 @@ body {
 header {
   align-items: center;
   border-bottom: 1px solid #f0b32e;
-  padding: 0 0 30px 0;
+  padding: 0 0 20px 0;
 }
 
 .location {
@@ -65,22 +65,13 @@ header {
   text-align: center;
   text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
     1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
-}
-
-.city {
-  font-size: 100px;
-  margin: 60px 0 30px 0;
-}
-
-.country {
-  font-size: 50px;
-  margin: 10px 0px;
+  padding:40px 0 20px 0;
+  font-size: 75px;
 }
 
 /*Left Box: Date, Weather Description, Temperature*/
 main {
   display: flex;
-  height: fit-content;
   justify-content: space-between;
   vertical-align: bottom;
 }
@@ -94,21 +85,22 @@ main {
 
 .date-time {
   font-size: 40px;
-  margin: 35px;
+  margin: 0;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 .main-weather-flex {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
 }
 
 .left-box-inner,
 .right-box-inner {
   width: 200px;
 }
-
-.left-box-inner {
+.right-box-inner {
+  margin-top: 30px;
 }
 
 .img-today-weather {
@@ -125,17 +117,12 @@ main {
   font-weight: bold;
 }
 
-.img-desc,
-.hi-low-today,
+.img-description-today,
 .unit-type {
   color: #2a6171;
   font-size: larger;
   font-weight: bold;
   margin: 5px;
-}
-
-.hi-low-today {
-  text-align: justify;
 }
 
 /*toggle*/
@@ -221,6 +208,10 @@ main {
   height: 15px;
 }
 
+.hi-low-today {
+  font-size: larger;
+  text-align: center;
+}
 /*Right Box Compass*/
 .right-box {
   align-items: flex-end;
@@ -231,8 +222,8 @@ main {
   display: flex;
   flex-direction: column;
   height: 200px;
+  margin: 0 20px;
   justify-content: space-between;
-  margin: 20px;
   position: relative;
   width: 200px;
 }
@@ -244,9 +235,9 @@ main {
   font-size: 40px;
   font-weight: bold;
   height: 20px;
-  margin: 20px 0;
   padding: 15px 15px;
   text-align: center;
+  margin: 0;
 }
 .compass-needle {
   background: linear-gradient(109.6deg, #75cac3 5%, #d7f7f5 95%);
@@ -288,12 +279,32 @@ main {
   color: #2a6171;
   width: 120px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .forecast-day {
+  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
+    1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+  font-size: 20px;
+  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
+.img-weather {
+  overflow: hidden;
+}
+
+.img-description {
+  margin: 0 0 5px 0;
+}
+
+.forecast-inner-box {
+  padding: 5px;
+}
 .forecast-info {
+  color: #d7f7f5;
+  text-shadow: 2px 0 #2a6171, -2px 0 #2a6171, 0 2px #2a6171, 0 -2px #2a6171,
+    1px 1px #2a6171, -1px -1px #2a6171, 1px -1px #2a6171, -1px 1px #2a6171;
 }
 
 .humidity-gauge {
@@ -309,8 +320,7 @@ main {
   position: relative;
   border-top-left-radius: 100% 200%;
   border-top-right-radius: 100% 200%;
-  overflow:hidden;
-  margin: 0 10px;
+  overflow: hidden;
 }
 
 .humidity-gauge-fill {
@@ -326,32 +336,28 @@ main {
 }
 
 .humidity-gauge-cover {
-width: 75%;
-height: 150%;
-background: #75cac3;
-position: absolute;
-border-radius: 50%;
-top:25%;
-left:50%;
-transform: translateX(-50%);
-
-/*text*/
-display:flex;
-align-items: center;
-justify-content: center;
-padding-bottom: 25%;
-box-sizing: border-box;
-
+  width: 75%;
+  height: 150%;
+  background: #75cac3;
+  position: absolute;
+  border-radius: 50%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  /*text*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
 }
-
-
 
 /*Footer*/
 footer {
   border-top: 1px solid #f0b32e;
   color: #2a6171;
   font-size: 17px;
-  padding: 30px 0 0 0;
+  padding: 20px 0 0 0;
   text-align: center;
 }
 

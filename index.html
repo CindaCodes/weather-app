@@ -44,8 +44,8 @@
         </form>
       </header>
       <div class="location">
-        <h1 class="city" id="city"></h1>
-        <h2 class="country" id="country"></h2>
+        <span id="city"></span><span>, </span>
+        <span id="country"></span>
       </div>
       <!--Todays forecast-->
       <main>
@@ -59,7 +59,13 @@
                   src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-night.png"
                 />
               </div>
-              <p class="img-desc" id="description"></p>
+              <p class="img-description-today" id="description"></p>
+              <p class="hi-low-today">
+                <span class="material-symbols-outlined red">thermometer</span>
+                <span id="high">12</span>
+                <span class="material-symbols-outlined blue">thermometer</span>
+                <span id="low">2</span>
+              </p>
             </div>
             <div class="right-box-inner">
               <span class="current-temp" id="temperature"></span>
@@ -88,12 +94,6 @@
           <p class="todays-info">
             Wind: <span id="wind-speed"></span><span id="wind-unit">km/h</span>
           </p>
-          <p class="todays-info">
-            <span class="material-symbols-outlined red">thermometer</span>
-            <span id="high">12</span>
-            <span class="material-symbols-outlined blue">thermometer</span>
-            <span id="low">2</span>
-          </p>
         </div>
 
         <!--Wind Compass-->
@@ -112,20 +112,36 @@
       <!--Forecast-->
       <div class="bottom-box-forecast">
         <p class="forecast-day">Thursday</p>
-        <p class="forecast-info">
-          <span class="material-symbols-outlined red">thermometer</span
-          ><span>12</span
-          ><span class="material-symbols-outlined blue">thermometer</span
-          ><span>2</span>
-        </p>
-        <p class="forecast-info">Humidity</p>
-        <div class="humidity-gauge">
-          <div class="humidity-gauge-body">
-            <div class="humidity-gauge-fill"></div>
-            <div class="humidity-gauge-cover">50%</div>
+        <div class="forecast-inner-box">
+          <img
+            class="img-weather"
+            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-night.png"
+          />
+          <p class="img-description">Cloudy</p>
+        </div>
+
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Temperature</p>
+          <p class="forecast-temp">
+            <span class="material-symbols-outlined red">thermometer</span
+            ><span>12</span
+            ><span class="material-symbols-outlined blue">thermometer</span
+            ><span>2</span>
+          </p>
+        </div>
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Humidity</p>
+          <div class="humidity-gauge">
+            <div class="humidity-gauge-body">
+              <div class="humidity-gauge-fill"></div>
+              <div class="humidity-gauge-cover">50%</div>
+            </div>
           </div>
         </div>
-        <p class="forecast-info">wind-speed</p>
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Wind</p>
+          <p class="forecast-wind">3.52km/h</p>
+        </div>
       </div>
 
       <footer>
