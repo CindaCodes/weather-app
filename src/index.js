@@ -13,6 +13,8 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let timeElement = document.querySelector("#time");
   let windSpeedElement = document.querySelector("#wind-speed");
+  let highSpeedElement = document.querySelector("#high");
+  let lowSpeedElement = document.querySelector("low");
 
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
@@ -135,4 +137,22 @@ function degreesToCardinal(degrees) {
 }
 
 let unitSystem = "metric";
+
+const gaugeElement = document.querySelector(".humidity-gauge");
+
+function setGaugeValue(gauge, value) {
+  if (value < 0 || value > 1) {
+    return;
+  }
+
+  gauge.querySelector(".humidity-gauge-fill").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge.querySelector(".humidity-gauge-cover").textContent = `${Math.round(
+    value * 100
+  )}`;
+}
+
+setGaugeValue(gaugeElement, .3);
+
 searchCity("Geiranger", unitSystem);

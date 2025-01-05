@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Englebert&family=Hammersmith+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=thermometer"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
@@ -73,7 +77,7 @@
           </div>
         </div>
 
-        <!--Right Container-->
+        <!--Middle Conainer-->
         <div class="middle-box">
           <p class="todays-info">
             Feels Like: <span id="feels-like"></span
@@ -83,6 +87,12 @@
           <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
           <p class="todays-info">
             Wind: <span id="wind-speed"></span><span id="wind-unit">km/h</span>
+          </p>
+          <p class="todays-info">
+            <span class="material-symbols-outlined red">thermometer</span>
+            <span id="high">12</span>
+            <span class="material-symbols-outlined blue">thermometer</span>
+            <span id="low">2</span>
           </p>
         </div>
 
@@ -99,6 +109,25 @@
         </div>
       </main>
 
+      <!--Forecast-->
+      <div class="bottom-box-forecast">
+        <p class="forecast-day">Thursday</p>
+        <p class="forecast-info">
+          <span class="material-symbols-outlined red">thermometer</span
+          ><span>12</span
+          ><span class="material-symbols-outlined blue">thermometer</span
+          ><span>2</span>
+        </p>
+        <p class="forecast-info">Humidity</p>
+        <div class="humidity-gauge">
+          <div class="humidity-gauge-body">
+            <div class="humidity-gauge-fill"></div>
+            <div class="humidity-gauge-cover">50%</div>
+          </div>
+        </div>
+        <p class="forecast-info">wind-speed</p>
+      </div>
+
       <footer>
         This project was coded by
         <a class="footer" href="https://github.com/cinda87" target="_blank"
@@ -106,14 +135,14 @@
         >, is
         <a
           class="footer"
-          href="https://github.com/cinda87/p-w7-vanilla-weather-app"
+          href="https://github.com/cinda87/p-w8-vanilla-weather-app-main"
           target="_blank"
           >open sourced on GitHub</a
         >
         and
         <a
           class="footer"
-          href="https://jacinda-weather-forcast.netlify.app"
+          href="https://jacindas-weather-forcast.netlify.app/"
           target="_blank"
           >hosted on Netlify</a
         >

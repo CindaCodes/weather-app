@@ -63,7 +63,8 @@ header {
 .location {
   color: #2a6171;
   text-align: center;
-  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e, 1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
+    1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
 }
 
 .city {
@@ -108,7 +109,6 @@ main {
 }
 
 .left-box-inner {
-
 }
 
 .img-today-weather {
@@ -139,7 +139,7 @@ main {
 }
 
 /*toggle*/
-.units-toggle-container{
+.units-toggle-container {
   margin-top: 30px;
 }
 .units {
@@ -204,10 +204,9 @@ main {
   transform: translate3d(22px, -50%, 0);
 }
 
-/*Right*/
+/*Middle Box*/
 .middle-box {
   align-items: flex-end;
-  margin-top: 20px;
 }
 
 .todays-info {
@@ -219,22 +218,10 @@ main {
   margin: 20px 0;
   padding: 15px 15px;
   text-align: left;
+  height: 15px;
 }
 
-/*Footer*/
-footer {
-  border-top: 1px solid #f0b32e;
-  color: #2a6171;
-  font-size: 17px;
-  padding: 30px 0 0 0;
-  text-align: center;
-}
-
-.footer {
-  color: #2a6171;
-}
-
-/*compass*/
+/*Right Box Compass*/
 .right-box {
   align-items: flex-end;
 }
@@ -291,4 +278,83 @@ footer {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
+}
+
+/*Bottom box Forcast*/
+.bottom-box-forecast {
+  background-color: #75cac3;
+  border-radius: 6px;
+  border: none;
+  color: #2a6171;
+  width: 120px;
+  text-align: center;
+}
+
+.forecast-day {
+}
+
+.forecast-info {
+}
+
+.humidity-gauge {
+  width: 100%;
+  max-width: 100px;
+}
+
+.humidity-gauge-body {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background-color: #f0b32e;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow:hidden;
+  margin: 0 10px;
+}
+
+.humidity-gauge-fill {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #2a6171;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.humidity-gauge-cover {
+width: 75%;
+height: 150%;
+background: #75cac3;
+position: absolute;
+border-radius: 50%;
+top:25%;
+left:50%;
+transform: translateX(-50%);
+
+/*text*/
+display:flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 25%;
+box-sizing: border-box;
+
+}
+
+
+
+/*Footer*/
+footer {
+  border-top: 1px solid #f0b32e;
+  color: #2a6171;
+  font-size: 17px;
+  padding: 30px 0 0 0;
+  text-align: center;
+}
+
+.footer {
+  color: #2a6171;
 }
