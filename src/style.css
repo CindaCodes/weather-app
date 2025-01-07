@@ -81,7 +81,6 @@ main {
 .left-box {
   color: #2a6171;
   text-align: center;
-  
 }
 
 .date-time {
@@ -120,8 +119,6 @@ main {
 }
 
 /*toggle*/
-.units-toggle-container {
-}
 .units {
   background-color: #2a6171;
   border-radius: 30px;
@@ -294,7 +291,7 @@ main {
   font-size: 20px;
   line-height: 20px;
   padding: 20px 0 0 0;
-  margin:0;
+  margin: 0;
 }
 
 .img-description {

@@ -200,9 +200,14 @@ function displayForecast(response) {
           <p class="forecast-info">Humidity</p>
           <div class="humidity-gauge">
             <div class="humidity-gauge-body">
-              <div class="humidity-gauge-fill"></div>
-              <div class="humidity-gauge-cover"> 
+              <div class="humidity-gauge-fill"
+              style="transform:rotate(${
+                Math.round(day.temperature.humidity) * 1.75
+              }deg)">
               </div>
+              <div class="humidity-gauge-cover">${Math.round(
+                day.temperature.humidity
+              )}%</div>
             </div>
           </div>
         </div>
@@ -219,7 +224,5 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
-
-
 
 searchCity("Geiranger", unitSystem);
