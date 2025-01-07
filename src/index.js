@@ -32,6 +32,7 @@ function refreshWeather(response) {
   const cardinalDirection = document.querySelector("#degree").innerHTML;
   const windDirection = document.querySelector("#cardinal-direction");
   windDirection.innerHTML = degreesToCardinal(cardinalDirection);
+  getForecast(response.data.city, unitSystem);
 }
 
 //Date/Time
@@ -79,7 +80,6 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   cityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value, unitSystem);
-  getForecast(searchInput.value, unitSystem);
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -105,7 +105,6 @@ function changeUnits(event) {
   }
 
   searchCity(city, unitSystem);
-  getForecast(city, unitSystem);
 }
 let unitToggle = document.querySelector("#myCheckbox");
 unitToggle.addEventListener("click", (event) => changeUnits(event));
@@ -138,22 +137,6 @@ function degreesToCardinal(degrees) {
 
 let unitSystem = "metric";
 
-//Humidity Gauge
-const gaugeElement = document.querySelector(".humidity-gauge");
-
-function setGaugeValue(gauge, value) {
-  if (value < 0 || value > 1) {
-    return;
-  }
-
-  gauge.querySelector(".humidity-gauge-fill").style.transform = `rotate(${
-    value / 2
-  }turn)`;
-  gauge.querySelector(".humidity-gauge-cover").textContent = `${Math.round(
-    value * 100
-  )}`;
-}
-
 //Daily Forecast
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -179,17 +162,18 @@ function getForecast(city, units) {
 function displayForecast(response) {
   let highTodayElement = document.querySelector("#high");
   let lowTodayElement = document.querySelector("#low");
+  let windUnit = document.querySelector("#wind-unit");
 
   highTodayElement.innerHTML = `${Math.round(
     response.data.daily[0].temperature.maximum
   )}°`;
-  lowTodayElement.innerHTML = `Today's low: ${Math.round(
+  lowTodayElement.innerHTML = `${Math.round(
     response.data.daily[0].temperature.minimum
   )}°`;
 
   let forecastHtml = "";
   response.data.daily.forEach(function (day, index) {
-    if (index >= 1 && index < 6) {
+    if (index >= 1 && index < 7) {
       forecastHtml =
         forecastHtml +
         `
@@ -200,7 +184,7 @@ function displayForecast(response) {
             class="img-weather"
             src="${day.condition.icon_url}"
           />
-          <p class="img-description">Cloudy</p>
+          <p class="img-description">${day.condition.description}</p>
         </div>
 
         <div class="forecast-inner-box">
@@ -216,9 +200,7 @@ function displayForecast(response) {
           <p class="forecast-info">Humidity</p>
           <div class="humidity-gauge">
             <div class="humidity-gauge-body">
-              <div class="humidity-gauge-fill">${Math.round(
-                day.temperature.humidity
-              )}%</div>
+              <div class="humidity-gauge-fill"></div>
               <div class="humidity-gauge-cover"> 
               </div>
             </div>
@@ -227,18 +209,17 @@ function displayForecast(response) {
         <div class="forecast-inner-box">
           <p class="forecast-info">Wind</p>
           <p class="forecast-wind">${Math.round(day.wind.speed)}
-          )}km/h</p>
+           <span id="forecast-wind-unit">${windUnit.innerHTML}</span>
+           </p>
         </div>
-      </div>
-
-    `;
+      </div> `;
     }
-    let humidityElement = `.${Math.round(day.temperature.humidity)}`;
-    setGaugeValue(gaugeElement, humidityElement);
   });
 
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+
+
 
 searchCity("Geiranger", unitSystem);
