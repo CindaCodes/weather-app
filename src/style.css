@@ -65,8 +65,9 @@ header {
   text-align: center;
   text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
     1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
-  padding:40px 0 20px 0;
+  padding: 20px 0 0 0;
   font-size: 75px;
+  line-height: 75px;
 }
 
 /*Left Box: Date, Weather Description, Temperature*/
@@ -80,14 +81,14 @@ main {
 .left-box {
   color: #2a6171;
   text-align: center;
-  vertical-align: bottom;
+  
 }
 
 .date-time {
   font-size: 40px;
+  line-height: 40px;
   margin: 0;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 15px 0;
 }
 
 .main-weather-flex {
@@ -99,35 +100,27 @@ main {
 .right-box-inner {
   width: 200px;
 }
+
 .right-box-inner {
-  margin-top: 30px;
-}
-
-.img-today-weather {
-  height: 200px;
-  width: 200px;
-}
-
-.unit-type {
-  justify-content: flex-start;
+  margin-top: 40px;
 }
 
 .current-temp {
-  font-size: 115px;
+  font-size: 120px;
   font-weight: bold;
 }
 
 .img-description-today,
 .unit-type {
   color: #2a6171;
-  font-size: larger;
+  font-size: 20px;
   font-weight: bold;
-  margin: 5px;
+  line-height: 20px;
+  margin: 0;
 }
 
 /*toggle*/
 .units-toggle-container {
-  margin-top: 30px;
 }
 .units {
   background-color: #2a6171;
@@ -202,10 +195,15 @@ main {
   border: none;
   color: #2a6171;
   font-size: 20px;
-  margin: 20px 0;
+  line-height: 20px;
   padding: 15px 15px;
   text-align: left;
-  height: 15px;
+  margin: 12px 0;
+}
+
+.label {
+  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
+    1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
 }
 
 .hi-low-today {
@@ -233,6 +231,7 @@ main {
   border: none;
   color: #2a6171;
   font-size: 40px;
+  line-height: 40px;
   font-weight: bold;
   height: 20px;
   padding: 15px 15px;
@@ -254,6 +253,7 @@ main {
 .degree-label {
   color: #2a6171;
   font-size: 20px;
+  line-height: 20px;
   font-weight: bold;
   left: 50%;
   position: absolute;
@@ -265,6 +265,7 @@ main {
   bottom: 10px;
   color: #2a6171;
   font-size: 20px;
+  line-height: 20px;
   font-weight: bold;
   left: 50%;
   position: absolute;
@@ -272,6 +273,11 @@ main {
 }
 
 /*Bottom box Forcast*/
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+}
 .bottom-box-forecast {
   background-color: #75cac3;
   border-radius: 6px;
@@ -279,23 +285,24 @@ main {
   color: #2a6171;
   width: 120px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .forecast-day {
   text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
     1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
   font-size: 20px;
+  line-height: 20px;
   padding: 20px 0 0 0;
-  margin: 20px 0 0 0;
+  margin:0;
 }
 
 .img-weather {
-  overflow: hidden;
+ line-height: 50px;
 }
 
 .img-description {
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 .forecast-inner-box {

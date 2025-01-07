@@ -62,9 +62,9 @@
               <p class="img-description-today" id="description"></p>
               <p class="hi-low-today">
                 <span class="material-symbols-outlined red">thermometer</span>
-                <span id="high">12</span>
+                <span id="high"></span>
                 <span class="material-symbols-outlined blue">thermometer</span>
-                <span id="low">2</span>
+                <span id="low"></span>
               </p>
             </div>
             <div class="right-box-inner">
@@ -86,13 +86,22 @@
         <!--Middle Conainer-->
         <div class="middle-box">
           <p class="todays-info">
-            Feels Like: <span id="feels-like"></span
-            ><span id="feels-unit-type">°C</span>
+            <span class="label">Feels Like:  </span>
+            <span id="feels-like"></span>
+            <span id="feels-unit-type">°C</span>
           </p>
-          <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
-          <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
           <p class="todays-info">
-            Wind: <span id="wind-speed"></span><span id="wind-unit">km/h</span>
+            <span class="label">Pressure:  </span>
+            <span id="pressure"></span>
+            mbar</p>
+          <p class="todays-info">
+            <span class="label">Humidity:  </span>
+            <span id="humidity">
+            </span>%</p>
+          <p class="todays-info">
+            <span class="label">Wind:  </span>
+            <span id="wind-speed"></span>
+            <span id="wind-unit">km/h</span>
           </p>
         </div>
 
@@ -110,39 +119,7 @@
       </main>
 
       <!--Forecast-->
-      <div class="bottom-box-forecast">
-        <p class="forecast-day">Thursday</p>
-        <div class="forecast-inner-box">
-          <img
-            class="img-weather"
-            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-night.png"
-          />
-          <p class="img-description">Cloudy</p>
-        </div>
-
-        <div class="forecast-inner-box">
-          <p class="forecast-info">Temperature</p>
-          <p class="forecast-temp">
-            <span class="material-symbols-outlined red">thermometer</span
-            ><span>12</span
-            ><span class="material-symbols-outlined blue">thermometer</span
-            ><span>2</span>
-          </p>
-        </div>
-        <div class="forecast-inner-box">
-          <p class="forecast-info">Humidity</p>
-          <div class="humidity-gauge">
-            <div class="humidity-gauge-body">
-              <div class="humidity-gauge-fill"></div>
-              <div class="humidity-gauge-cover">50%</div>
-            </div>
-          </div>
-        </div>
-        <div class="forecast-inner-box">
-          <p class="forecast-info">Wind</p>
-          <p class="forecast-wind">3.52km/h</p>
-        </div>
-      </div>
+      <div id="forecast" class="forecast"></div>
 
       <footer>
         This project was coded by

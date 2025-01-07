@@ -13,8 +13,6 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let timeElement = document.querySelector("#time");
   let windSpeedElement = document.querySelector("#wind-speed");
-  let highSpeedElement = document.querySelector("#high");
-  let lowSpeedElement = document.querySelector("low");
 
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
@@ -81,6 +79,7 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   cityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value, unitSystem);
+  getForecast(searchInput.value, unitSystem);
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -106,6 +105,7 @@ function changeUnits(event) {
   }
 
   searchCity(city, unitSystem);
+  getForecast(city, unitSystem);
 }
 let unitToggle = document.querySelector("#myCheckbox");
 unitToggle.addEventListener("click", (event) => changeUnits(event));
@@ -138,6 +138,7 @@ function degreesToCardinal(degrees) {
 
 let unitSystem = "metric";
 
+//Humidity Gauge
 const gaugeElement = document.querySelector(".humidity-gauge");
 
 function setGaugeValue(gauge, value) {
@@ -153,6 +154,91 @@ function setGaugeValue(gauge, value) {
   )}`;
 }
 
-setGaugeValue(gaugeElement, 0.3);
+//Daily Forecast
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return day;
+}
+
+function getForecast(city, units) {
+  let apiKey = "a050491735e3o6daf6dd43f3ab206bct";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let highTodayElement = document.querySelector("#high");
+  let lowTodayElement = document.querySelector("#low");
+
+  highTodayElement.innerHTML = `${Math.round(
+    response.data.daily[0].temperature.maximum
+  )}°`;
+  lowTodayElement.innerHTML = `Today's low: ${Math.round(
+    response.data.daily[0].temperature.minimum
+  )}°`;
+
+  let forecastHtml = "";
+  response.data.daily.forEach(function (day, index) {
+    if (index >= 1 && index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `
+    <div class="bottom-box-forecast">
+        <p class="forecast-day">${formatForecastDay(day.time)}</p>
+        <div class="forecast-inner-box">
+          <img
+            class="img-weather"
+            src="${day.condition.icon_url}"
+          />
+          <p class="img-description">Cloudy</p>
+        </div>
+
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Temperature</p>
+          <p class="forecast-temp">
+            <span class="material-symbols-outlined red">thermometer</span
+            ><span>${Math.round(day.temperature.maximum)}º</span
+            ><span class="material-symbols-outlined blue">thermometer</span
+            ><span>${Math.round(day.temperature.minimum)}º</span>
+          </p>
+        </div>
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Humidity</p>
+          <div class="humidity-gauge">
+            <div class="humidity-gauge-body">
+              <div class="humidity-gauge-fill">${Math.round(
+                day.temperature.humidity
+              )}%</div>
+              <div class="humidity-gauge-cover"> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="forecast-inner-box">
+          <p class="forecast-info">Wind</p>
+          <p class="forecast-wind">${Math.round(day.wind.speed)}
+          )}km/h</p>
+        </div>
+      </div>
+
+    `;
+    }
+    let humidityElement = `.${Math.round(day.temperature.humidity)}`;
+    setGaugeValue(gaugeElement, humidityElement);
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 
 searchCity("Geiranger", unitSystem);
