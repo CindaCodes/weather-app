@@ -188,7 +188,7 @@ function displayForecast(response) {
         </div>
 
         <div class="forecast-inner-box">
-          <p class="forecast-info">Temperature</p>
+  
           <p class="forecast-temp">
             <span class="material-symbols-outlined red">thermometer</span
             ><span>${Math.round(day.temperature.maximum)}º</span
@@ -212,8 +212,9 @@ function displayForecast(response) {
           </div>
         </div>
         <div class="forecast-inner-box">
-          <p class="forecast-info">Wind</p>
-          <p class="forecast-wind">${Math.round(day.wind.speed)}
+          <p> 
+          <span class="forecast-info">Wind</span>
+          <span class="forecast-wind">${Math.round(day.wind.speed)}</span>
            <span id="forecast-wind-unit">${windUnit.innerHTML}</span>
            </p>
         </div>
