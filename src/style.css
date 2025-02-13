@@ -408,7 +408,9 @@ footer {
     margin: 0 auto;
     width: 90%;
   }
-
+  .location {
+    margin-top: 10%;
+  }
   .weather-app {
     box-shadow: none;
     margin: 0 auto;
