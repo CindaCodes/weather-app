@@ -179,6 +179,8 @@ function displayForecast(response) {
         `
     <div class="bottom-box-forecast">
         <p class="forecast-day">${formatForecastDay(day.time)}</p>
+        <div class="forecast-flex-box">
+        <div class="forecast-left-box">
         <div class="forecast-inner-box">
           <img
             class="img-weather"
@@ -196,6 +198,8 @@ function displayForecast(response) {
             ><span>${Math.round(day.temperature.minimum)}º</span>
           </p>
         </div>
+        </div>
+        <div class="forecast-right-box">
         <div class="forecast-inner-box">
           <p class="forecast-info">Humidity</p>
           <div class="humidity-gauge">
@@ -212,11 +216,13 @@ function displayForecast(response) {
           </div>
         </div>
         <div class="forecast-inner-box">
-          <p> 
+          <p class="forecast-wind"> 
           <span class="forecast-info">Wind</span>
           <span class="forecast-wind">${Math.round(day.wind.speed)}</span>
            <span id="forecast-wind-unit">${windUnit.innerHTML}</span>
            </p>
+        </div>
+        </div>
         </div>
       </div> `;
     }

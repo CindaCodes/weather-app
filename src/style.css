@@ -1,5 +1,9 @@
-
-/*Full Page*/
+:root {
+  --primary-color: #2a6171;
+  --secondary-color: #75cac3;
+  --tertiary-color: #f0b32e;
+  --quaternary-color: #d7f7f5;
+}
 
 video {
   left: 0;
@@ -13,13 +17,12 @@ body {
   font-family: "Englebert", "Afacad Flux";
   font-style: normal;
   font-weight: 600;
-
 }
 
 .weather-app {
-  background: #d7f7f5;
+  background: var(--quaternary-color);
   border-radius: 16px;
-  box-shadow: 10px 10px 10px #75cac3;
+  box-shadow: 10px 10px 10px var(--secondary-color);
   margin: 15px auto;
   margin: 15px auto;
   max-width: 850px;
@@ -36,7 +39,7 @@ body {
 
 /* Search Bar */
 .search-form-input {
-  background-color: #75cac3;
+  background-color: var(--secondary-color);
   border-radius: 6px;
   border: none;
   font-size: 16px;
@@ -45,10 +48,10 @@ body {
 }
 
 .search-form-button {
-  background: #2a6171;
+  background: var(--primary-color);
   border-radius: 6px;
   border: none;
-  color: #f0b32e;
+  color: var(--tertiary-color);
   font-size: 16px;
   font-weight: bold;
   margin-left: 5px;
@@ -58,17 +61,20 @@ body {
 
 header {
   align-items: center;
-  border-bottom: 1px solid #f0b32e;
+  border-bottom: 1px solid var(--tertiary-color);
   padding: 0 0 10px 0;
 }
 
 .location {
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 55px;
   line-height: 55px;
   padding: 15px 0 0 0;
   text-align: center;
-  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+  text-shadow: 2px 0 var(--tertiary-color), -2px 0 var(--tertiary-color),
+    0 2px var(--tertiary-color), 0 -2px var(--tertiary-color),
+    1px 1px var(--tertiary-color), -1px -1px var(--tertiary-color),
+    1px -1px var(--tertiary-color), -1px 1px var(--tertiary-color);
 }
 
 /*Left Box: Date, Weather Description, Temperature*/
@@ -80,7 +86,7 @@ main {
 
 /*Left*/
 .left-box {
-  color: #2a6171;
+  color: var(--primary-color);
   text-align: center;
 }
 
@@ -112,7 +118,7 @@ main {
 
 .img-description-today,
 .unit-type {
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: bold;
   line-height: 20px;
@@ -121,11 +127,11 @@ main {
 
 /*toggle*/
 .units {
-  background-color: #2a6171;
+  background-color: var(--primary-color);
   border-radius: 30px;
-  border: 1px solid #f0b32e;
-  box-shadow: inset 0px -1px 5px #f0b32e;
-  color: #f0b32e;
+  border: 1px solid var(--tertiary-color);
+  box-shadow: inset 0px -1px 5px var(--tertiary-color);
+  color: var(--tertiary-color);
   display: flex;
   font-size: 16px;
   justify-content: space-between;
@@ -157,7 +163,7 @@ main {
 
 .units-button {
   border-radius: 30px;
-  box-shadow: inset 0px -1px 5px #f0b32e;
+  box-shadow: inset 0px -1px 5px var(--tertiary-color);
   height: 32px;
   pointer-events: none;
   position: relative;
@@ -165,9 +171,9 @@ main {
 }
 
 .units-button::after {
-  background-color: #f0b32e;
+  background-color: var(--tertiary-color);
   border-radius: 30px;
-  box-shadow: 0px 1px 2px #f0b32e;
+  box-shadow: 0px 1px 2px var(--tertiary-color);
   content: "";
   height: 25px;
   left: 4px;
@@ -188,10 +194,10 @@ main {
 }
 
 .todays-info {
-  background-color: #75cac3;
+  background-color: var(--secondary-color);
   border-radius: 6px;
   border: none;
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 20px;
   line-height: 20px;
   padding: 10px 10px;
@@ -200,8 +206,10 @@ main {
 }
 
 .label {
-  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,
-    1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+  text-shadow: 2px 0 var(--tertiary-color), -2px 0 var(--tertiary-color),
+    0 2px var(--tertiary-color), 0 -2px var(--tertiary-color),
+    1px 1px var(--tertiary-color), -1px -1px var(--tertiary-color),
+    1px -1px var(--tertiary-color), -1px 1px var(--tertiary-color);
 }
 
 .hi-low-today {
@@ -213,7 +221,7 @@ main {
   align-items: flex-end;
 }
 .compass {
-  background-color: #f0b32e;
+  background-color: var(--tertiary-color);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -227,7 +235,7 @@ main {
 .compass-lable {
   border-radius: 6px;
   border: none;
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 35px;
   font-weight: bold;
   height: 20px;
@@ -237,7 +245,11 @@ main {
   text-align: center;
 }
 .compass-needle {
-  background: linear-gradient(109.6deg, #75cac3 5%, #d7f7f5 95%);
+  background: linear-gradient(
+    109.6deg,
+    var(--secondary-color) 5%,
+    var(--quaternary-color) 95%
+  );
   border-radius: 5px;
   height: 70px;
   left: 50%;
@@ -249,7 +261,7 @@ main {
 }
 
 .degree-label {
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: bold;
   left: 50%;
@@ -261,7 +273,7 @@ main {
 
 .direction-label {
   bottom: 10px;
-  color: #2a6171;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: bold;
   left: 50%;
@@ -277,10 +289,10 @@ main {
   margin: 10px 15px;
 }
 .bottom-box-forecast {
-  background-color: #75cac3;
+  background-color: var(--secondary-color);
   border-radius: 6px;
   border: none;
-  color: #2a6171;
+  color: var(--primary-color);
   margin-bottom: 10px;
   text-align: center;
   width: 120px;
@@ -291,7 +303,10 @@ main {
   line-height: 20px;
   margin: 0;
   padding: 10px 0 0 0;
-  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e,1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+  text-shadow: 2px 0 var(--tertiary-color), -2px 0 var(--tertiary-color),
+    0 2px var(--tertiary-color), 0 -2px var(--tertiary-color),
+    1px 1px var(--tertiary-color), -1px -1px var(--tertiary-color),
+    1px -1px var(--tertiary-color), -1px 1px var(--tertiary-color);
 }
 
 .img-description {
@@ -302,11 +317,12 @@ main {
   padding: 0;
 }
 .forecast-info {
-  color: #d7f7f5;
-  text-shadow: 2px 0 #2a6171, -2px 0 #2a6171, 0 2px #2a6171, 0 -2px #2a6171,
-    1px 1px #2a6171, -1px -1px #2a6171, 1px -1px #2a6171, -1px 1px #2a6171;
+  color: var(--quaternary-color);
+  text-shadow: 2px 0 var(--primary-color), -2px 0 var(--primary-color),
+    0 2px var(--primary-color), 0 -2px var(--primary-color),
+    1px 1px var(--primary-color), -1px -1px var(--primary-color),
+    1px -1px var(--primary-color), -1px 1px var(--primary-color);
 }
-
 
 .humidity-gauge {
   max-width: 100px;
@@ -315,7 +331,7 @@ main {
 }
 
 .humidity-gauge-body {
-  background-color: #f0b32e;
+  background-color: var(--tertiary-color);
   border-top-left-radius: 100% 200%;
   border-top-right-radius: 100% 200%;
   height: 0;
@@ -326,7 +342,7 @@ main {
 }
 
 .humidity-gauge-fill {
-  background: #2a6171;
+  background: var(--primary-color);
   height: 100%;
   left: 0;
   position: absolute;
@@ -338,7 +354,7 @@ main {
 }
 
 .humidity-gauge-cover {
-  background: #75cac3;
+  background: var(--secondary-color);
   border-radius: 50%;
   height: 150%;
   left: 50%;
@@ -356,13 +372,96 @@ main {
 
 /*Footer*/
 footer {
-  border-top: 1px solid #f0b32e;
-  color: #2a6171;
+  border-top: 1px solid var(--tertiary-color);
+  color: var(--primary-color);
   font-size: 17px;
   padding: 10px 0 0 0;
   text-align: center;
 }
 
 .footer {
-  color: #2a6171;
+  color: var(--primary-color);
+  text-decoration: none;
+  text-shadow: 0 0 1em var(--tertiary-color), 0 0 0.2em var(--tertiary-color);
+}
+
+.footer:hover {
+  font-size: larger;
+}
+
+@media screen and (max-width: 768px) {
+  video {
+    display: none;
+  }
+
+  body {
+    background-color: var(--quaternary-color);
+  }
+
+  .weather-app {
+    box-shadow: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .search-form-input {
+    width: 65%;
+    margin: 0;
+  }
+  .search-form-button {
+    margin: 0;
+    width: 30%;
+  }
+  .location {
+    font-size: 40px;
+  }
+  main {
+    display: block;
+  }
+  .todays-info {
+    margin: 3% auto;
+    text-align: center;
+    width: 80%;
+  }
+  .compass {
+    margin: 5% auto;
+  }
+  .forecast {
+    display: block;
+    margin: 0 auto;
+  }
+  .bottom-box-forecast {
+    text-align: center;
+    width: 98%;
+  }
+  .forecast-flex-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .forecast-inner-box {
+    width: 100%;
+  }
+  .forecast-left-box,
+  .forecast-right-box {
+    width: 50%;
+  }
+  .img-description,
+  .forecast-temp {
+    margin: 0 0 10% 0;
+  }
+  .forecast-info,
+  .humidity-gauge {
+    margin: 12% auto;
+  }
+  .forecast-wind {
+    margin: 20% 0 0 0;
+  }
+
+  footer {
+    line-height: 1.5;
+  }
 }
