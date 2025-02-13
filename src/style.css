@@ -390,12 +390,23 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .__pf [data-pf-type="Section"] {
+    overflow-x: hidden !important;
+  }
+
   video {
     display: none;
   }
 
   body {
     background-color: var(--quaternary-color);
+    max-width: 100%;
+  }
+
+  header {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .weather-app {
@@ -406,10 +417,11 @@ footer {
   .search-form {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
   }
   .search-form-input {
-    width: 65%;
+    width: 60%;
     margin: 0;
   }
   .search-form-button {
@@ -417,7 +429,13 @@ footer {
     width: 30%;
   }
   .location {
-    font-size: 40px;
+    font-size: 35px;
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .location-date {
+    font-size: 30px;
   }
   main {
     display: block;
@@ -433,10 +451,12 @@ footer {
   .forecast {
     display: block;
     margin: 0 auto;
+    width: 90%;
   }
   .bottom-box-forecast {
     text-align: center;
-    width: 98%;
+    width: 100%;
+    margin: 5% auto;
   }
   .forecast-flex-box {
     display: flex;
@@ -463,5 +483,7 @@ footer {
 
   footer {
     line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
