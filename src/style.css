@@ -430,7 +430,7 @@ footer {
   .location {
     max-width: 90%;
     text-align: center;
-    margin: 0 auto;
+    margin: 10% auto 0 auto;
   }
   .location-date {
     font-size: 30px;
