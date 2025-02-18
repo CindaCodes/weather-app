@@ -1,0 +1,2 @@
+<p>Jacinda's Weather Forecast is a web application that provides users with current weather conditions, including temperature, humidity, wind speed, and direction. The app allows users to switch between Metric and Imperial units for temperature display.</p>
+<img width="1423" alt="Screenshot 2025-02-13 at 10 20 07 AM" src="https://github.com/user-attachments/assets/f2e89632-c04f-4193-8789-76db10f62c75" />
