@@ -5,18 +5,15 @@
   --quaternary-color: #d7f7f5;
 }
 
-video {
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
 body {
   font-family: "Englebert", "Afacad Flux";
   font-style: normal;
   font-weight: 600;
+  background: linear-gradient(
+    to top,
+    var(--quaternary-color) 0%,
+    var(--tertiary-color) 100%
+  );
 }
 
 .weather-app {
@@ -94,7 +91,7 @@ main {
   font-size: 35px;
   line-height: 35px;
   margin: 0;
-  padding: 10px 0;
+  padding: 10px 0 0 0;
 }
 
 .main-weather-flex {
@@ -107,12 +104,8 @@ main {
   width: 200px;
 }
 
-.right-box-inner {
-  margin-top: 40px;
-}
-
 .current-temp {
-  font-size: 120px;
+  font-size: 100px;
   font-weight: bold;
 }
 
@@ -191,6 +184,7 @@ main {
 /*Middle Box*/
 .middle-box {
   align-items: flex-end;
+  margin-top: 15px;
 }
 
 .todays-info {
@@ -221,15 +215,15 @@ main {
   align-items: flex-end;
 }
 .compass {
-  background-color: var(--tertiary-color);
+  background: radial-gradient(circle, var(--quaternary-color), var(--tertiary-color));
   border-radius: 50%;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 175px;
   justify-content: space-between;
-  margin: 0 20px;
+  margin: 17px auto 0 auto;
   position: relative;
-  width: 200px;
+  width: 175px;
 }
 
 .compass-lable {
@@ -248,16 +242,16 @@ main {
   background: linear-gradient(
     109.6deg,
     var(--secondary-color) 5%,
-    var(--quaternary-color) 95%
+    var(--primary-color) 95%
   );
   border-radius: 5px;
-  height: 70px;
+  height: 55px;
   left: 50%;
   position: absolute;
   top: 50%;
   transform-origin: 50% 100%;
   transform: translate(-50%, -100%);
-  width: 10px;
+  width: 7px;
 }
 
 .degree-label {
@@ -394,13 +388,10 @@ footer {
     overflow-x: hidden !important;
   }
 
-  video {
-    display: none;
-  }
-
   body {
     background-color: var(--quaternary-color);
     max-width: 100%;
+    margin: 0;
   }
 
   header {
@@ -412,6 +403,7 @@ footer {
     box-shadow: none;
     margin: 0 auto;
     width: 100%;
+    height: 100%;
   }
   .search-form {
     display: flex;
