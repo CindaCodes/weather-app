@@ -388,7 +388,7 @@ footer {
   font-size: larger;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .__pf [data-pf-type="Section"] {
     overflow-x: hidden !important;
   }
