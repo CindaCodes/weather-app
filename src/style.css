@@ -14,6 +14,7 @@ body {
     var(--quaternary-color) 0%,
     var(--tertiary-color) 100%
   );
+  height: 100vh;
 }
 
 .weather-app {
@@ -215,7 +216,11 @@ main {
   align-items: flex-end;
 }
 .compass {
-  background: radial-gradient(circle, var(--quaternary-color), var(--tertiary-color));
+  background: radial-gradient(
+    circle,
+    var(--quaternary-color),
+    var(--tertiary-color)
+  );
   border-radius: 50%;
   display: flex;
   flex-direction: column;
